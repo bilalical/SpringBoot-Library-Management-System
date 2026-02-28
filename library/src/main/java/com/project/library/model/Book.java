@@ -27,7 +27,7 @@ public class Book
     private String ISBN;
 
     private boolean available = true;
-    private int copies;
+    private int copies = -1;
 
     @LastModifiedDate
     private LocalDateTime lastUpdated;

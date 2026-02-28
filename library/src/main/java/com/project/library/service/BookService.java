@@ -93,12 +93,20 @@ public class BookService
 
         Book existingBook = result.get();
 
-        existingBook.setTitle(updatedBook.getTitle());
-        existingBook.setAuthor(updatedBook.getAuthor());
-        existingBook.setGenre(updatedBook.getGenre());
-        existingBook.setISBN(updatedBook.getISBN());
-        existingBook.setAvailable(updatedBook.isAvailable());
-        existingBook.setCopies(updatedBook.getCopies());
+        if(updatedBook.getTitle() != null)
+            existingBook.setTitle(updatedBook.getTitle());
+
+        if(updatedBook.getAuthor() != null)
+            existingBook.setAuthor(updatedBook.getAuthor());
+
+        if(updatedBook.getGenre() != null)
+            existingBook.setGenre(updatedBook.getGenre());
+
+        if(updatedBook.getISBN() != null)
+            existingBook.setISBN(updatedBook.getISBN());
+
+        if(updatedBook.getCopies() != -1)
+            existingBook.setCopies(updatedBook.getCopies());
 
         return Optional.of(repository.save(existingBook));
     }
