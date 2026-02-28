@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)  // Automatically updates the lastUpdated attribute
 @JsonPropertyOrder({"bookID", "title", "author", "genre", "isbn", "available", "copies", "lastUpdated"})
 
 public class Book
@@ -22,9 +22,8 @@ public class Book
     private String title;
     private String author;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)    // maps the enums by strings instead of their index
     private Genre genre;
-
     @Column(unique = true)
     private String isbn;
 
@@ -33,4 +32,5 @@ public class Book
 
     @LastModifiedDate
     private LocalDateTime lastUpdated;
+
 }

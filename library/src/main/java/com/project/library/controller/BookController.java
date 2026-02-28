@@ -99,5 +99,9 @@ public class BookController
         return service.postBook(b);
     }
 
-
+    @PostMapping("/add")
+    public List<Book> addBookList(@RequestBody List<Book> books)
+    {
+        return service.postBookList(books);
+    }
 }

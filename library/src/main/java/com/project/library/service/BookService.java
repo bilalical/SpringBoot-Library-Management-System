@@ -88,6 +88,11 @@ public class BookService
         return repository.save(book);
     }
 
+    public List<Book> postBookList(List<Book> books)
+    {
+        return repository.saveAll(books);
+    }
+
     public Optional<Book> updateBook(long id, Book updatedBook) // ID for searching the book in db, Book for the updated attributes
     {
         Optional<Book> result = repository.findById(id);
