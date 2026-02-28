@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/member")
+@RequestMapping("/api/members")
 
 public class MemberController
 {
@@ -77,7 +77,5 @@ public class MemberController
     {
         return service.postMemberList(members);
     }
-
-
 
 }

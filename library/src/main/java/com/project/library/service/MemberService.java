@@ -87,6 +87,9 @@ public class MemberService
         if(updatedMember.getDepartment() != null)
             existingMember.setDepartment(updatedMember.getDepartment());
 
+        if(updatedMember.getCms()!= -1)
+            existingMember.setCms(updatedMember.getCms());
+
         return Optional.of(repository.save(existingMember));
 
     }

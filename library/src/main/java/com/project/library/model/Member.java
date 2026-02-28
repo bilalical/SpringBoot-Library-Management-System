@@ -22,7 +22,7 @@ public class Member
     private String name;
 
     @Column(unique = true, nullable = false)
-    private long cms;
+    private long cms = -1;
     @Enumerated(EnumType.STRING)
     private Department department;
     @LastModifiedDate
