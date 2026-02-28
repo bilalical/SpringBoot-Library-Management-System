@@ -32,7 +32,7 @@ public class Issue
 
     private LocalDateTime dueDate;
 
-    private boolean returned;
+    private boolean returned = false;
 
     @LastModifiedDate
     private LocalDateTime lastUpdated;

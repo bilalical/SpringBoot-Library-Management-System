@@ -2,6 +2,8 @@ package com.project.library.service;
 
 import com.project.library.model.Book;
 import com.project.library.model.Genre;
+import com.project.library.model.Issue;
+import com.project.library.model.Member;
 import com.project.library.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
