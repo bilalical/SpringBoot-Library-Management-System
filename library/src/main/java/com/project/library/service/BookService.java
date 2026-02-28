@@ -46,6 +46,11 @@ public class BookService
         return new ArrayList<>(result);     // ArrayList is the implementation of the List Interface
     }
 
+    public Optional<Book> searchBookById(long id)
+    {
+        return repository.findById(id);
+    }
+
     public Optional<Book> switchAvailable(long id)
     {
         Optional<Book> result = repository.findById(id);
