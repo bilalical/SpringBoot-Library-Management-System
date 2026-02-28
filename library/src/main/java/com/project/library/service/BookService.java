@@ -1,6 +1,7 @@
 package com.project.library.service;
 
 import com.project.library.model.Book;
+import com.project.library.model.Genre;
 import com.project.library.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
@@ -26,13 +27,18 @@ public class BookService
         return repository.findByAvailableTrue();
     }
 
+    public List<Book> fetchBooksByGenre(Genre genre)
+    {
+        return repository.findByGenre(genre);
+    }
+
     public List<Book> searchBook (String query)
     {
-        Optional<Book> bookByISBN = repository.findByISBN(query);
+        Optional<Book> bookByIsbn = repository.findByIsbn(query);
 
-        if(bookByISBN.isPresent())
+        if(bookByIsbn.isPresent())
         {
-            return List.of(bookByISBN.get());
+            return List.of(bookByIsbn.get());
         }
 
         List<Book> booksByTitle = repository.findByTitleContainingIgnoreCase(query);
@@ -102,8 +108,8 @@ public class BookService
         if(updatedBook.getGenre() != null)
             existingBook.setGenre(updatedBook.getGenre());
 
-        if(updatedBook.getISBN() != null)
-            existingBook.setISBN(updatedBook.getISBN());
+        if(updatedBook.getIsbn() != null)
+            existingBook.setIsbn(updatedBook.getIsbn());
 
         if(updatedBook.getCopies() != -1)
             existingBook.setCopies(updatedBook.getCopies());

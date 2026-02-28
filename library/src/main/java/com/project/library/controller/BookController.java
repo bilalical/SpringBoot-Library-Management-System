@@ -1,6 +1,7 @@
 package com.project.library.controller;
 
 import com.project.library.model.Book;
+import com.project.library.model.Genre;
 import com.project.library.service.BookService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +47,12 @@ public class BookController
     public List<Book> getAvailableBooks()
     {
         return service.fetchAvailableBooks();
+    }
+
+    @GetMapping("/genre/{genre}")
+    public List<Book> getBooksByGenre(@PathVariable Genre genre)
+    {
+        return service.fetchBooksByGenre(genre);
     }
 
     @PutMapping("/{id}")

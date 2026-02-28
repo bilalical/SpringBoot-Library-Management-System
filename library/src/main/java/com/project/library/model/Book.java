@@ -1,5 +1,6 @@
 package com.project.library.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @EntityListeners(AuditingEntityListener.class)
+@JsonPropertyOrder({"bookID", "title", "author", "genre", "isbn", "available", "copies", "lastUpdated"})
 
 public class Book
 {
@@ -24,7 +26,7 @@ public class Book
     private Genre genre;
 
     @Column(unique = true)
-    private String ISBN;
+    private String isbn;
 
     private boolean available = true;
     private int copies = -1;
