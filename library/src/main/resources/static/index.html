@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LMS - Member Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+<div class="card p-3 mb-4">
+    <h4>Add New Member</h4>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <input type="text" id="nameInput" class="form-control" placeholder="Full Name">
+        </div>
+        <div class="col-md-3">
+            <input type="number" id="cmsInput" class="form-control" placeholder="CMS Number">
+        </div>
+        <div class="col-md-3">
+            <select id="deptInput" class="form-control">
+                <option value="" disabled selected hidden>Select Department</option>
+                <option value="SEECS">SEECS</option>
+                <option value="NBS">NBS</option>
+                <option value="S3H">S3H</option>
+                <option value="SMME">SMME</option>
+                <option value="SNS">SNS</option>
+                <option value="ASAB">ASAB</option>
+                <option value="SADA">SADA</option>
+                <option value="SINES">SINES</option>
+                <option value="SCEE">SCEE</option>
+                <option value="NICE">NICE</option>
+                <option value="EME">EME</option>
+                <option value="MCS">MCS</option>
+
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success w-100" onclick="addMember()">Add</button>
+        </div>
+    </div>
+</div>
+<h2>Library Members</h2>
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>CMS</th>
+        <th>Department</th>
+    </tr>
+    </thead>
+    <tbody id="memberTableBody">
+    </tbody>
+</table>
+
+<script src="app.js"></script>
+</body>
+</html>

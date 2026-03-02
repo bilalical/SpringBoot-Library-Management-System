@@ -10,6 +10,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/issue")
+@CrossOrigin(origins = "*")
+
 public class IssueController
 {
     private final IssueService service;
